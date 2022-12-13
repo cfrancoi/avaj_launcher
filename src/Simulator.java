@@ -14,11 +14,11 @@ import weather.WeatherTower;
 public class Simulator {
     private static WeatherTower weatherTower = new WeatherTower();
     private static List<Flyable> flyables = new ArrayList<Flyable>();
+    private static int repetionTime = 0;
 
     private static void parsScenario(Scanner reader)
     {
         int lineNumber = 1;
-        int repetionTime = 0;
 
         if(reader.hasNextLine())
             repetionTime = Integer.parseInt(reader.nextLine());
@@ -54,7 +54,9 @@ public class Simulator {
 
     private static void startSimulation()
     {
-
+        for (int rep = 0; rep < repetionTime; rep++) {
+            weatherTower.changeWeather();
+        }
     }
     public static void main(String[] args)
     {
@@ -75,5 +77,7 @@ public class Simulator {
             System.err.println("An error occured.");
             e.printStackTrace();
         }
+
+        startSimulation();
     }
 }

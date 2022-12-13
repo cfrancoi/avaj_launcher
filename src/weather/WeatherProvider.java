@@ -7,13 +7,13 @@ public class WeatherProvider {
     private static WeatherProvider weatherProvider = null;
 
     private static String[] weather = {
-        Weather.SUN.toString(),
-        Weather.RAIN.toString(),
-        Weather.FOG.toString(),
-        Weather.SNOW.toString(),
+        EWeather.SUN.toString(),
+        EWeather.RAIN.toString(),
+        EWeather.FOG.toString(),
+        EWeather.SNOW.toString(),
     };
 
-    public WeatherProvider getProvider(){
+    public static WeatherProvider getProvider(){
         if (weatherProvider == null)
             weatherProvider = new WeatherProvider();
         return weatherProvider;

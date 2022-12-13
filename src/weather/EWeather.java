@@ -1,9 +1,8 @@
 package weather;
 
-
-public enum Weather {
+public enum EWeather {
     RAIN,
     FOG,
     SUN,
     SNOW
-};
+}

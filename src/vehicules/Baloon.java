@@ -1,5 +1,6 @@
 package vehicules;
 import weather.Coordinates;
+import weather.EWeather;
 import weather.WeatherTower;
 import java.util.logging.Logger;
 
@@ -15,7 +16,17 @@ public class Baloon extends Aircraft implements Flyable {
         super(name, coordinates);
     }
 
-    public void updateConditions() {}
+    /**
+     * Request WEATHER and apdate coordinate
+     */
+    public void updateConditions() {
+        if (weatherTower != null)
+        {
+            String weather = weatherTower.getWeather(this.coordinates);
+            
+            log.info("Weater " + weather);
+        }
+    }
 
     @Override
     public void registerTower(WeatherTower weatherTower) {

@@ -17,5 +17,9 @@ public class Tower {
         observers.remove(flyable);
     }
 
-    protected void conditionsChanged() {}
+    protected void conditionsChanged() {
+        for (Flyable flyable: observers) {
+            flyable.updateConditions();
+        }
+    }
 }

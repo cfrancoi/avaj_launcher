@@ -1,14 +1,18 @@
 package weather;
+
 public class WeatherTower extends Tower {
-    
+
     public String getWeather(Coordinates coordinates)
     {
         return "weater"; //todo
     }
 
-    private void changeWeather()
+    /**
+     * For each observer and call update
+     */
+    public void changeWeather()
     {
-        return ;
-    };
+        this.conditionsChanged();
+    }
 
 }
