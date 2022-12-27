@@ -30,6 +30,15 @@ public class Coordinates {
         this.height = height;
     }
 
+    public static Coordinates add(Coordinates left, Coordinates right)
+    {
+        int longitude = left.getLongitude() + right.getLongitude();
+        int latitude = left.getLatitude() + right.getLatitude();
+        int height = left.getHeight() + right.getHeight();
+
+        return  new Coordinates(longitude, latitude, height);
+    }
+
 
     public Coordinates(int longitude, int latitude, int height)
     {
