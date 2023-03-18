@@ -8,11 +8,8 @@ import vehicules.AircraftFactory;
 import vehicules.Flyable;
 import weather.WeatherTower;
 
-
-
-
 public class Simulator {
-    private static WeatherTower weatherTower = new WeatherTower();
+    private static final WeatherTower weatherTower = new WeatherTower();
     private static List<Flyable> flyables = new ArrayList<Flyable>();
     private static int repetionTime = 0;
 
@@ -34,9 +31,9 @@ public class Simulator {
             else
             {
                 System.out.println("New aircraft : " + data[0]);
-                int longitude = Integer.parseInt(data[2]);
-                int latitude = Integer.parseInt(data[3]);
-                int height = Integer.parseInt(data[4]);
+                final int longitude = Integer.parseInt(data[2]);
+                final int latitude = Integer.parseInt(data[3]);
+                final int height = Integer.parseInt(data[4]);
 
                 System.out.println(data[2] + " " + data[3] + " " + data[4]);
                 Flyable nextAircraft = AircraftFactory.newAircraft(data[0], data[1], longitude, latitude, height);

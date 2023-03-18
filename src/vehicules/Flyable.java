@@ -16,4 +16,5 @@ public interface Flyable {
      * Send request for register to weatherTower
      */
     public void registerTower(WeatherTower weatherTower);
+
 }

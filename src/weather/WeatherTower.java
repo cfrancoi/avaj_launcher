@@ -4,7 +4,13 @@ public class WeatherTower extends Tower {
 
     public String getWeather(Coordinates coordinates)
     {
-        return "weater"; //todo
+        double rand;
+
+        rand =Math.random() * 3;
+
+        String[] weathers = EWeather.getNames(EWeather.class);
+
+        return weathers[(int)rand];
     }
 
     /**

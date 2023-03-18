@@ -14,8 +14,8 @@ public class Baloon extends Aircraft implements Flyable {
     private static final Coordinates rainMove = new Coordinates(0, 0, 5);
     private static final Coordinates fogMove = new Coordinates(0, 0, 3);
     private static final Coordinates snowMove = new Coordinates(0, 0, 15);
-    private static final int maxHeight = 100;
-    private static final int minHeight = 0;
+    private static final int MAX_HEIGHT = 100;
+    private static final int MIN_HEIGHT = 0;
 
     public Baloon(String name, Coordinates coordinates)
     {
@@ -48,22 +48,25 @@ public class Baloon extends Aircraft implements Flyable {
                 //TODO error
             }
            
-            if (this.coordinates.getHeight() <= minHeight)
+            if (this.coordinates.getHeight() <= MIN_HEIGHT)
             {
                 this.weatherTower.unregister(this);
                 this.weatherTower = null;
                 //TODO print error
             }
-            else if (this.coordinates.getHeight() > maxHeight)
+            else if (this.coordinates.getHeight() > MAX_HEIGHT)
             {
-                this.coordinates.setHeight(maxHeight);
+                this.coordinates.setHeight(MAX_HEIGHT);
             }
+            this.logConditionChanged(TYPE, weather);
         }
+
+        
     }
 
     @Override
     public void registerTower(WeatherTower weatherTower) {
-        log.info("[" + TYPE + "] " + this.name + " register to weather tower");
+        this.logRegisterToWeatherTower(TYPE);
         this.weatherTower = weatherTower;
         this.weatherTower.register(this);
     }
