@@ -2,19 +2,32 @@ package vehicules;
 
 import weather.WeatherTower;
 
-public interface Flyable {
+public abstract class Flyable {
+    protected WeatherTower weatherTower = null;
 
     /**
      * Request WEATHER and update coordinate
      */
-    public void updateConditions();
+    public abstract void updateConditions();
 
     /**
      * 
+     * Send request for register to weatherTower
+     * 
      * @param weatherTower
      * 
-     * Send request for register to weatherTower
      */
-    public void registerTower(WeatherTower weatherTower);
+    public void registerTower(WeatherTower weatherTower) {
+        // this.logRegisterToWeatherTower(TYPE);
+        setWeatherTower(weatherTower);
+        this.weatherTower.register(this);
+    }
 
+    public WeatherTower getWeatherTower() {
+        return weatherTower;
+    }
+
+    public void setWeatherTower(WeatherTower weatherTower) {
+        this.weatherTower = weatherTower;
+    }
 }
