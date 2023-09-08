@@ -1,19 +1,27 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 # avaj_launcher
+
+
+Build project using: 
+
+```
+    find * -name "*.java" > sources.txt
+    javac @sources.txt
+```
+
+
+
+Run using:
+```
+    java -cp src Simulator <file>
+```
+
+
+## Subject
+
+You need to implement an aircraft simulation program based on the class diagram pro-
+vided to you. All classes are required to be implemented respecting every detail provided
+in the diagram. Feel free to add more classes or include additional attributes if you think
+it is necessary, but do not change access modifiers or the class hierarchy for the classes
+provided in the diagram
+
+![uml](avaj_uml.png)

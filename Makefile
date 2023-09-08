@@ -26,3 +26,12 @@ all: compile
 
 clean:
 	$(RM) $(CLASS)
+	$(RM) sources.txt
+
+
+build:
+	find * -name "*.java" > sources.txt
+	javac @sources.txt
+
+.PHONY: compile all build
+	
